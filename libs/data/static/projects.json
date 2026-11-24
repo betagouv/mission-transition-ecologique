@@ -57,7 +57,8 @@
       "competitivite-energetique-des-entreprises-na",
       "pret-flash-electrique",
       "decarb-flash-artisan",
-      "mon-parcours-economies-energie"
+      "mon-parcours-economies-energie",
+      "tp-up-pm-up-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -422,7 +423,7 @@
     "nameTag": "🏢 réseau de chaleur",
     "shortDescription": "Un réseau de chaleur (ou réseau de chauffage urbain) est une installation distribuant à plusieurs utilisateurs.",
     "image": "/images/projet/reseau-chaleur.webp",
-    "longDescription": "Les réseaux de chaleur permettent de répartir et distribuer de la chaleur ou du froid à plusieurs bâtiments à partir d'une même source de chaleur renouvelable (chaufferie biomasse, géothermie, chaleur de récupération, chaleur fatale, chaleur solaire thermique).\\\nRaccorder les bâtiments de votre entreprise à un réseau de chaleur existant vous permet de chauffer vos bâtiments grâce à une énergie renouvelable et produite localement, et de réaliser des économies substantielles en énergie.",
+    "longDescription": "Les réseaux de chaleur permettent de distribuer de la chaleur et du froid à plusieurs bâtiments à partir d'une production énergétique centralisée. Ils valorisent des **énergies renouvelables et locales**, comme la biomasse, la géothermie, la chaleur solaire thermique ou encore la chaleur de récupération issue des activités industrielles.\n\n\n\nPour votre entreprise, le raccordement à un réseau de chaleur constitue une solution efficace pour décarboner le chauffage de vos bâtiments, qu'ils soient industriels, tertiaires ou commerciaux. En remplaçant vos systèmes de chauffage fonctionnant aux énergies fossiles par une **énergie renouvelable et produite localement**, vous réduisez votre empreinte carbone et améliorez votre performance énergétique.\n\n\n\nLe raccordement à un réseau de chaleur vous permet également de mieux **maîtriser vos dépenses énergétiques**, de **limiter les contraintes** liées à l'exploitation de vos équipements de chauffage et de **contribuer à vos objectifs de transition énergétique**.",
     "moreDescription": "- [**Réseaux de chaleur** :](https://fondschaleur.ademe.fr/reseau-de-chaleur/) définition, chiffre clés et domaines d'applications.\n- [**Découvrir les réseaux près de chez vous**](https://france-chaleur-urbaine.beta.gouv.fr/professionnels) : saisissez votre adresse pour savoir si un réseau de chaleur existe à proximité de votre bâtiment.",
     "themes": [
       "energy"
@@ -681,7 +682,7 @@
     "nameTag": "🔃 chaleur de récupération",
     "shortDescription": "La chaleur de récupération (ou fatale) est la chaleur « perdue » par une installation qui dégage une énergie thermique.",
     "image": "/images/projet/chaleur-recuperation.webp",
-    "longDescription": "Quand l'énergie thermique produite par une installation n'est pas utilisée en totalité, on parle de \"chaleur fatale\". Cette chaleur peut-être récupérée pour les besoins de chauffage d'un bâtiment par exemple ou réintroduite dans un réseau de chaleur. Elle devient une source importante d'économies d'énergie.",
+    "longDescription": "La chaleur fatale, également appelée chaleur de récupération, désigne l'énergie thermique produite lors d'un procédé industriel ou du fonctionnement d'un équipement, mais qui n'est pas utilisée et se retrouve généralement rejetée dans l'environnement.\n\n\n\nPour les entreprises et les sites industriels, cette chaleur résiduelle représente un véritable potentiel de valorisation énergétique. Grâce à des équipements spécifiques, comme les échangeurs thermiques, elle peut être récupérée et réutilisée pour répondre à différents besoins énergétiques.\n\n\n\nLa chaleur fatale peut notamment être valorisée pour :\n\n- **Le chauffage des bâtiments professionnels** : bureaux, ateliers, entrepôts ou locaux industriels.\n- **La production d'eau chaude** : pour les besoins sanitaires ou industriels.\n- **Les procédés de fabrication** : pour préchauffer les fluides et les équipements industriels.\n- **L'alimentation d'un réseau de chaleur** : en redistribuant la chaleur excédentaire à des bâtiments ou installations situés à proximité.\n\n\n\nLa récupération de chaleur fatale constitue ainsi un levier concret pour améliorer l'efficacité énergétique de votre entreprise. Elle permet de réduire les consommations d'énergie, de maîtriser les coûts énergétiques et de limiter les pertes thermiques liées à votre activité.\n\n\n\nCette démarche contribue également à réduire votre empreinte carbone et à renforcer votre stratégie de décarbonation. Elle s'inscrit pleinement dans une politique de transition énergétique et d'optimisation des ressources.",
     "moreDescription": "- [**Chaleur fatale**](https://fondschaleur.ademe.fr/chaleur-fatale-2/) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
@@ -891,7 +892,7 @@
     "nameTag": "🌏 géothermie",
     "shortDescription": "La géothermie permet de produire différents types d'énergie en fonction de la température de la chaleur puisée dans le sous-sol.",
     "image": "/images/projet/geothermie.webp",
-    "longDescription": "La géothermie est une énergie renouvelable qui consiste à exploiter la chaleur du sous-sol pour produire de la chaleur, du froid ou de l'électricité. Cette énergie est disponible localement, 24h/24, 365 jours/an, et est peu dépendante des variations climatiques journalières ou saisonnières.\n\nLa géothermie peut être exploitée à différentes profondeurs et pour de nombreux usages, tels que le chauffage des bâtiments, la climatisation, le rafraîchissement, le stockage d'énergie thermique, etc. La géothermie est une énergie renouvelable locale, permanente et décarbonée. Elle est peu émettrice de gaz à effet de serre et contribue à la décarbonation du chauffage des bâtiments.",
+    "longDescription": "La géothermie consiste à exploiter la chaleur naturellement présente dans le sous-sol pour répondre aux besoins énergétiques des entreprises et des bâtiments professionnels. Énergie renouvelable, locale et disponible en continu, elle constitue une solution particulièrement pertinente pour réduire les consommations d'énergies fossiles, maîtriser les coûts énergétiques et accélérer la décarbonation des activités.\n\n\n\nSelon la profondeur d'exploitation et les besoins énergétiques, deux grandes formes de géothermie peuvent être mobilisées :\n\n- **La géothermie de surface** exploite la chaleur du sous-sol à faible profondeur, généralement jusqu'à 200 mètres. Associée à des pompes à chaleur, elle permet de produire du chauffage et du rafraîchissement pour les bâtiments tertiaires, industriels ou commerciaux. Elle peut également être utilisée pour le stockage et la valorisation de l'énergie thermique.\n- **La géothermie profonde** puise la chaleur dans des aquifères situés à plusieurs centaines, voire plusieurs milliers de mètres de profondeur. Les aquifères sont des formations géologiques souterraines constituées de roches ou de sédiments poreux ou fissurés, capables de contenir et de laisser circuler de l'eau naturellement réchauffée par le sous-sol. Cette ressource permet de disposer d'une chaleur à température plus élevée, adaptée notamment aux besoins importants et continus en chaleur des sites industriels, des réseaux de chaleur et des grands ensembles immobiliers.\n\n\n\nLa géothermie offre ainsi aux entreprises une solution énergétique locale, renouvelable et pilotable, peu dépendante des conditions météorologiques et disponible 24h/24, 365 jours par an. Faiblement émettrice de gaz à effet de serre en phase d'exploitation, elle contribue à **améliorer la performance énergétique des bâtiments**, à **renforcer l'indépendance énergétique des sites** et à **inscrire les activités économiques dans une trajectoire de décarbonation**.",
     "moreDescription": "- [**Géothermie**](https://www.geothermies.fr/decouvrir-la-geothermie) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
@@ -1527,7 +1528,8 @@
       "cec-impact",
       "pass-transformation-ecologique-occitanie",
       "contrat-3s-occitanie",
-      "autodiag-eau-salons-de-coiffure"
+      "autodiag-eau-salons-de-coiffure",
+      "tp-up-pm-up-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1623,7 +1625,8 @@
       "fonds-economie-circulaire-ormat",
       "pass-transformation-ecologique-occitanie",
       "contrat-3s-occitanie",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "tp-up-pm-up-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -2095,7 +2098,8 @@
       "autodiagnostic-rse",
       "contrat-innovation-occitanie",
       "contrat-entreprise-d-avenir",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [
       30
@@ -2356,7 +2360,8 @@
       "contrat-entreprise-d-avenir",
       "contrat-3s-occitanie",
       "travail-et-climat",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "tp-up-pm-up-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2463,7 +2468,8 @@
       "autodiagnostic-rse",
       "eval-360-pays-de-la-loire",
       "accelerateur-transition-s",
-      "mon-parcours-economies-energie"
+      "mon-parcours-economies-energie",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2540,7 +2546,8 @@
       "eval-360-pays-de-la-loire",
       "cec-impact",
       "contrat-3s-occitanie",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [
       1
@@ -2618,7 +2625,8 @@
       "cec-impact",
       "contrat-3s-occitanie",
       "travail-et-climat",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "tp-up-pm-up-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -3267,7 +3275,7 @@
     "nameTag": "🌿 végétalisation",
     "shortDescription": "La végétalisation contribue à réduire les îlots de chaleur tout en améliorant la qualité de vie de vos équipes.",
     "image": "/images/projet/vegetalisation.webp",
-    "longDescription": "La végétalisation est un recours efficace et économe en énergie pour limiter la hausse de la température de vos bâtiments en été. Ce rafraichissement s'explique par plusieurs raisons :\n\n- Les plantes libèrent de l'eau par le processus d'évapotranspiration, ce qui contribue à abaisser la température ambiante.\n- Les arbres et les grandes plantes fournissent de l'ombre, réduisant ainsi l'ensoleillement direct sur les sols et les bâtiments.\n- En remplaçant des surfaces comme le béton par de la végétation, on limite l'absorption de chaleur par ces matériaux qui retiennent la chaleur.\n- Les plantes filtrent les polluants de l'air et produisent de l'oxygène, ce qui contribue à créer un environnement plus sain et plus agréable.\n- Les espaces verts favorisent la biodiversité, ce qui peut contribuer à un meilleur équilibre des écosystèmes locaux, aidant à maintenir des températures agréables.\n\nLa végétalisation est une solution vertueuse qui est se présente comme un excellent moyen pour limiter l'usage de la climatisation et ainsi réduire votre consommation d'énergie. Elle peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des plantes grimpantes ou comestibles sur vos façades, des prairies végétales ou des potagers sur les toits de vos bâtiments.",
+    "longDescription": "La végétalisation des bâtiments et des espaces extérieurs constitue une solution naturelle et peu énergivore pour limiter la surchauffe des bâtiments en été. Pour les entreprises, elle contribue à améliorer le confort thermique des occupants, à réduire le recours à la climatisation et à favoriser l'adaptation au changement climatique.\n\nSon action repose sur plusieurs mécanismes naturels :\n\n- **L'évapotranspiration :** les végétaux libèrent de la vapeur d'eau dans l'atmosphère, contribuant ainsi à rafraîchir l'air ambiant.\n- **La protection solaire :** les arbres, arbustes et plantes grimpantes créent de l'ombre et limitent l'exposition des façades et des toitures au rayonnement solaire.\n- **La réduction des îlots de chaleur :** remplacer certaines surfaces minérales, comme le béton ou l'enrobé, par des espaces végétalisés permet de limiter l'accumulation de chaleur.\n- **L'amélioration du cadre de travail :** les espaces verts contribuent au bien-être des collaborateurs et favorisent la biodiversité en milieu urbain.\n\nLa végétalisation représente ainsi un levier complémentaire pour **améliorer la performance énergétique** des bâtiments professionnels et **limiter les besoins en climatisation**. Elle peut prendre différentes formes selon la configuration des sites : toitures végétalisées, façades et murs végétalisés, plantes grimpantes, plantations d'arbres, parkings végétalisés, jardins partagés ou prairies naturelles.\n\nCes aménagements contribuent à **améliorer le confort thermique des sites** professionnels, à limiter les effets des fortes chaleurs et à favoriser la biodiversité.",
     "moreDescription": "- [**Des exemples de projets de végétalisation inspirants**](https://plusfraichemaville.fr/projet) proposés par Plus fraiche ma ville",
     "themes": [
       "biodiversite"
@@ -3482,7 +3490,8 @@
       "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
       "contrat-innovation-occitanie",
       "contrat-3s-occitanie",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3556,7 +3565,8 @@
       "aide-renovation-batiment-tertiaire",
       "etude-opportunite-installation-biomasse-collective",
       "aide-installation-chauderie-biomasse-collective",
-      "mon-parcours-economies-energie"
+      "mon-parcours-economies-energie",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [
       4,
@@ -3755,7 +3765,7 @@
     "nameTag": "📜 écogestes",
     "shortDescription": "Une sensibilisation pour inciter vos clients à adopter des comportements responsables.",
     "image": "/images/projet/sensibilisation-ecogestes.webp",
-    "longDescription": "Pour appuyer vos efforts visant à réduire la consommation de ressources et la production de déchets de votre établissement, il est important de sensibiliser vos clients aux éco-gestes à adopter.  Dans un hébergement touristique, par exemple, l’affichage de messages pédagogiques dans les chambres peut encourager vos clients à réutiliser les serviettes, limiter l’utilisation des équipements de chauffage ou de climatisation, ou à éteindre les lumières et les appareils électriques lorsqu’ils ne sont pas utilisés. Pour leurs sorties, invitez vos clients à ne laisser aucun déchet derrière eux (emballages, mégots, chewing-gums…).\n\nPour faciliter la mise en place de ces bonnes pratiques, sensibilisez également vos équipes afin qu'elles puissent promouvoir ces comportements vertueux auprès des clients.",
+    "longDescription": "En tant que chef d'entreprise ou responsable d'établissement, vous avez un rôle essentiel à jouer dans la réduction de votre consommation de ressources et de votre production de déchets. Pour inscrire votre organisation dans une démarche de développement durable, **impliquez vos salariés, collaborateurs et clients** dans l'adoption d'éco-gestes au quotidien.\n\n\n\nMettez en place une communication environnementale adaptée à votre activité afin d'encourager chacun à adopter des comportements responsables. Dans un établissement touristique, par exemple, l'installation de supports de sensibilisation dans les chambres permet d'inciter vos clients à :\n\n- Réutiliser leurs serviettes et limiter le renouvellement du linge.\n- Réduire l'utilisation du chauffage et de la climatisation.\n- Éteindre les lumières et les appareils électriques inutilisés.\n- Ne laisser aucun déchet dans la nature lors de leurs sorties (emballages, mégots, chewing-gums…).  \n\n\nLa réussite de cette démarche environnementale repose également sur l'implication de vos équipes. Sensibilisez et accompagnez vos salariés et collaborateurs afin qu'ils deviennent les relais de votre politique RSE auprès de vos clients. En les associant à vos engagements écologiques, vous favorisez l'**adoption de bonnes pratiques**, développez une **culture d'entreprise responsable** et mobilisez l'ensemble de vos parties prenantes autour d'un **objectif commun** : réduire durablement l'empreinte environnementale de votre établissement.",
     "moreDescription": "- [**Le kit écogestes**](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) destiné aux établissements touristiques, proposé par l’ADEME\n- [**Éco-gestes : sensibiliser les touristes**](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), par la CCI Ardèche",
     "themes": [
       "energy",
@@ -3953,7 +3963,7 @@
     "nameTag": "⚡️ méthanisation",
     "shortDescription": "La méthanisation produit du biogaz à partir de déchets et résidus agricoles.",
     "image": "/images/projet/methanisation.webp",
-    "longDescription": "La méthanisation est un processus biologique qui consiste à décomposer des matières organiques (déchets agricoles, déchets industriels, déchets ménagers, boues d'épuration...) pour produire du biogaz, un gaz renouvelable, ainsi que du digesta**t**, un résidu organique riche en nutriments.\\\nLe biogaz peut-être alors utilisé comme source d'énergie (chaleur, carburant, source d'électricité) et le digestat comme fertilisant pour les sols, à condition d'en éliminer préalablement les bactéries pathogènes.\n\nLa méthanisation permet ainsi de valoriser les déchets organiques en énergie et en engrais, réduisant ainsi les coûts et les impacts liés à leur traitement. Vous pouvez également utiliser le biogaz produit pour répondre aux besoins énergétiques de votre entreprise ou le vendre à des réseaux de distribution (injection dans le réseau de gaz naturel).",
+    "longDescription": "La méthanisation est un procédé biologique qui permet de transformer les matières organiques en énergie renouvelable et en fertilisant naturel. Ce processus repose sur la dégradation de déchets biodégradables (déchets agricoles, résidus agroalimentaires, déchets industriels, boues d'épuration, biodéchets…) par des micro-organismes, en l'absence d'oxygène.\n\nCette transformation produit deux ressources valorisables :\n\n- **Le biogaz** : composé principalement de méthane et de dioxyde de carbone, il peut être utilisé pour produire de la chaleur et de l'électricité, alimenter des équipements industriels ou être épuré pour obtenir du biométhane, injectable dans le réseau de gaz naturel ou utilisable comme carburant.\n- **Le digestat** : ce résidu organique issu du processus de méthanisation est riche en éléments fertilisants. Avant sa valorisation agricole, il peut nécessiter un traitement complémentaire visant notamment à éliminer les bactéries pathogènes et à garantir le respect des exigences sanitaires et réglementaires applicables. Il peut ensuite être utilisé comme fertilisant ou amendement agricole.\n\n\n\nPour les entreprises qui produisent des déchets organiques, la méthanisation représente une véritable opportunité de transformer une contrainte de gestion des déchets en ressource économique et énergétique. Elle permet notamment de réduire les volumes de déchets à traiter, de limiter les coûts liés à leur élimination et de contribuer à la production d'une énergie renouvelable locale.\n\n\n\nEn fonction de vos besoins et de votre activité, le biogaz produit peut être directement valorisé pour couvrir une partie de vos consommations énergétiques ou être commercialisé, notamment sous forme de biométhane injecté dans le réseau de gaz naturel.\n\n\n\nEn intégrant la méthanisation dans votre stratégie de gestion des déchets et de transition énergétique, vous participez au développement de l'économie circulaire tout en optimisant la valorisation de vos ressources organiques.",
     "moreDescription": "- [**Méthanisation**](https://infos.ademe.fr/magazine-fevrier-2022/faits-et-chiffres/les-chiffres-cles-de-la-methanisation/), Définition et chiffres clés par l'ADEME.\n- [**L'élu, la méthanisation et le biogaz**](https://amorce.asso.fr/publications/guide-l-elu-la-methanisation-et-le-biogaz-enp78), un guide de l'association AMORCE, pour saisir les enjeux de la production de biogaz.",
     "themes": [
       "energy",
@@ -4016,7 +4026,8 @@
       "contrat-3s-occitanie",
       "prorefei-formation-referents-energie-industrie",
       "competitivite-energetique-des-entreprises-na",
-      "mon-parcours-economies-energie"
+      "mon-parcours-economies-energie",
+      "tp-up-pm-up-idf"
     ],
     "linkedProjects": [
       4
@@ -4057,8 +4068,8 @@
     "nameTag": "🚃 train",
     "shortDescription": "Le train, un mode de transport à haute efficacité énergétique",
     "image": "/images/projet/train.webp",
-    "longDescription": "Réduire l’empreinte carbone liée aux déplacements professionnels est un levier essentiel pour les entreprises qui engagent leur transition écologique. Parmi les solutions les plus efficaces et accessibles, le train se distingue par son excellent bilan environnemental. En remplaçant les trajets professionnels effectués en voiture ou en avion par des voyages en train, votre entreprise réduit considérablement ses émissions tout en conservant confort, rapidité et praticité.\n\nPrenons l’exemple concret d’un trajet Nantes-Paris. Les émissions sont les suivantes :\n\n- Train : 1,2 kg de CO₂\n\n- Voiture thermique : 84 kg de CO₂\n\n- Avion : 88,5 kg de CO₂\n\nAinsi, choisir le train pour ce trajet réduit les émissions de CO₂ d’environ 98 % par rapport à la voiture ou l’avion.\\\nEn intégrant le train dans votre politique de mobilité, votre entreprise peut réaliser des réductions significatives d'émissions de CO₂, contribuant ainsi activement à la lutte contre le changement climatique.",
-    "moreDescription": "- [**Calculer l'impact carbone de vos trajets**](https://impactco2.fr/outils/transport) en fonction du moyen de transport, avec l'outil Impact CO2.\n- [**Faire essayer pour faire adopter : l'opération \"Allez-vous préférer le train ?\"**](https://librairie.ademe.fr/societe-et-politiques-publiques/6517-faire-essayer-pour-faire-adopter-l-operation-allez-vous-preferer-le-train-.html), par l'ADEME.",
+    "longDescription": "La mobilité des salariés représente un enjeu majeur pour les entreprises engagées dans une démarche de transition écologique. En repensant les déplacements professionnels et les modes de transport utilisés par vos collaborateurs, vous pouvez réduire significativement l'empreinte carbone de votre activité.\n\n\n\nParmi les alternatives à la voiture et à l'avion, le train constitue une solution de mobilité durable particulièrement intéressante. En encourageant vos salariés à privilégier le transport ferroviaire pour leurs déplacements professionnels, vous **diminuez les émissions de gaz à effet de serre** de votre entreprise, tout en leur offrant un **mode de transport confortable**, pratique et adapté aux trajets de moyenne et longue distance.\n\n\n\nL'impact du choix du transport sur les émissions est particulièrement significatif. Prenons l'exemple d'un trajet Nantes-Paris :\n\n- Train : 1,2 kg de CO₂\n- Voiture thermique : 84 kg de CO₂\n- Avion : 88,5 kg de CO₂\n\n\n\nSur cet exemple, **le train permet de réduire les émissions de CO₂ d'environ 98 % par rapport à la voiture thermique ou à l'avion**.\n\n\n\nEn intégrant le train dans votre politique de mobilité professionnelle et votre stratégie de décarbonation, vous agissez concrètement sur le bilan carbone de votre entreprise. C'est également un moyen d'encourager des pratiques de déplacement plus responsables auprès de vos collaborateurs et de renforcer votre engagement en faveur d'une mobilité durable.",
+    "moreDescription": "- [**Calculer l'impact carbone de vos trajets**](https://impactco2.fr/outils/transport) en fonction du moyen de transport, avec l'outil Impact CO₂.\n- [**Faire essayer pour faire adopter : l'opération \"Allez-vous préférer le train ?\"**](https://librairie.ademe.fr/societe-et-politiques-publiques/6517-faire-essayer-pour-faire-adopter-l-operation-allez-vous-preferer-le-train-.html), par l'ADEME.",
     "themes": [
       "mobility"
     ],
