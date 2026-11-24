@@ -17,15 +17,12 @@ export async function validateObjectiveLink(link: string, step: number, generato
 }
 
 export async function validateProgramLink(link: string, brokenLevel: LogLevel, field: string, generator: ProgramDto) {
-  const status = await LinkValidator.checkLink(link)
-  LinkValidator.logLinkStatus(
-    { link: LinkValidator.forceHttps(link), status },
-    {
-      logger: generator.logger,
-      brokenLevel,
-      field,
-      id: generator.rawProgram['Id fiche dispositif'],
-      rowId: generator.rawProgram.id
-    }
-  )
+  const check = await LinkValidator.check(link)
+  LinkValidator.logLinkStatus(check, {
+    logger: generator.logger,
+    brokenLevel,
+    field,
+    id: generator.rawProgram['Id fiche dispositif'],
+    rowId: generator.rawProgram.id
+  })
 }

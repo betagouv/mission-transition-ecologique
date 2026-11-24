@@ -19,10 +19,10 @@ describe('setObjectives', () => {
     vi.restoreAllMocks()
   })
 
-  it('waits for the step link checks before returning, so that they are logged before the report is written', async () => {
+  it('waits for the step link checks before returning, and logs them with their reason', async () => {
     // a slow check: without await, setObjectives would return before the link is logged
-    vi.spyOn(LinkValidator, 'checkLink').mockImplementation(
-      () => new Promise((resolve) => setTimeout(() => resolve(LinkStatus.Broken), 20))
+    vi.spyOn(LinkValidator, 'check').mockImplementation(
+      (link) => new Promise((resolve) => setTimeout(() => resolve({ link, status: LinkStatus.Broken, reason: 'HTTP 404' }), 20))
     )
     vi.spyOn(LinkValidator, 'findInvalidLinks').mockResolvedValue([])
     const { generator, logger } = buildGenerator({ étape1: '- Faire le diagnostic\n[Le site](https://www.example.fr/404)' })
@@ -31,7 +31,7 @@ describe('setObjectives', () => {
 
     expect(logger.logLink).toHaveBeenCalledWith(
       LogLevel.Major,
-      { url: 'https://www.example.fr/404', status: LinkStatus.Broken, field: 'étape 1' },
+      { url: 'https://www.example.fr/404', status: LinkStatus.Broken, field: 'étape 1', reason: 'HTTP 404' },
       'mon-dispositif',
       42
     )

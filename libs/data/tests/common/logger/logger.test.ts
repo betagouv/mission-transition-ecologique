@@ -157,4 +157,47 @@ describe('Logger.write', () => {
 
     expect(writtenContent(logger)).toContain('Une \\<b\\>question\\</b\\> \\*\\_\\`')
   })
+
+  it('lists links refused or unreachable even in a browser in a visible section, after the broken ones and before the collapsed one', () => {
+    const logger = new Logger(LoggerType.Program)
+    logger.logLink(LogLevel.Info, { url: 'https://protege.fr/a', status: LinkStatus.Unverifiable, field: 'étape 1' }, 'dispositif-a', 1)
+    const forbidden = { url: 'https://refuse.fr/b', status: LinkStatus.Forbidden, reason: 'HTTP 403 dans le navigateur' }
+    logger.logLink(LogLevel.Info, { ...forbidden, field: 'étape 2' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Info, { ...forbidden, field: 'URL externe' }, 'dispositif-b', 2)
+    logger.logLink(
+      LogLevel.Info,
+      { url: 'https://lent.fr/c', status: LinkStatus.Unreachable, field: 'étape 1', reason: 'délai dépassé ; navigateur : délai dépassé' },
+      'dispositif-c',
+      3
+    )
+    logger.logLink(
+      LogLevel.Major,
+      { url: 'https://www.example.fr/404', status: LinkStatus.Broken, field: 'étape 1', reason: 'HTTP 404' },
+      'dispositif-a',
+      1
+    )
+
+    const content = writtenContent(logger)
+    const toCheckTitle = content.indexOf('#### :warning: Liens refusés ou injoignables, à vérifier manuellement (2)')
+    const forbiddenRows = content.split('\n').filter((line) => line.includes('refuse.fr/b'))
+
+    expect(content).toContain('| Lien cassé (HTTP 404) |')
+    expect(toCheckTitle).toBeGreaterThan(content.indexOf('Liens cassés'))
+    expect(toCheckTitle).toBeLessThan(content.indexOf('<details>'))
+    expect(forbiddenRows).toHaveLength(1)
+    expect(forbiddenRows[0]).toContain(
+      '| [refuse.fr/b](https://refuse.fr/b) | Accès refusé (403), même dans un navigateur (HTTP 403 dans le navigateur) |'
+    )
+    expect(forbiddenRows[0]).toContain(' : étape 2<br>')
+    expect(content).toContain('| Injoignable (délai dépassé ; navigateur : délai dépassé) |')
+  })
+
+  it('shows the reason of a link even when its first log has none', () => {
+    const logger = new Logger(LoggerType.Program)
+    const url = 'https://www.example.fr/500'
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 1' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 2', reason: 'HTTP 500' }, 'dispositif-a', 1)
+
+    expect(writtenContent(logger)).toContain('| Lien cassé (HTTP 500) |')
+  })
 })

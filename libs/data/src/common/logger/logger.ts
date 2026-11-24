@@ -18,7 +18,9 @@ export class Logger implements LoggerInterface {
     [LinkStatus.Valid]: 'Lien valide',
     [LinkStatus.Broken]: 'Lien cassé',
     [LinkStatus.Malformed]: 'Lien mal formé (chemin local ou protocole non web)',
-    [LinkStatus.Unverifiable]: 'Non vérifiable automatiquement (protection anti-robot)'
+    [LinkStatus.Unverifiable]: 'Non vérifiable automatiquement (protection anti-robot)',
+    [LinkStatus.Forbidden]: 'Accès refusé (403), même dans un navigateur',
+    [LinkStatus.Unreachable]: 'Injoignable'
   }
 
   constructor(
@@ -53,13 +55,16 @@ export class Logger implements LoggerInterface {
   write(fileName: string) {
     const sortedLogs = this._sortLogs()
     const generalLogs = sortedLogs.filter((log) => !log.link)
-    const linkLogs = sortedLogs.filter((log) => log.link && log.link.status !== LinkStatus.Unverifiable)
+    const linkLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Broken || log.link?.status === LinkStatus.Malformed)
+    const toCheckLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Forbidden || log.link?.status === LinkStatus.Unreachable)
     const unverifiableLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Unverifiable)
 
     // Most important sections first: the PR body may be truncated at the end
     const markdownContent =
-      this._renderGeneralLogs(generalLogs) + this._renderLinkLogs(linkLogs) + this._renderUnverifiableLogs(unverifiableLogs) ||
-      'Aucun point problématique détecté.\n'
+      this._renderGeneralLogs(generalLogs) +
+        this._renderLinkLogs(linkLogs) +
+        this._renderToCheckLogs(toCheckLogs) +
+        this._renderUnverifiableLogs(unverifiableLogs) || 'Aucun point problématique détecté.\n'
 
     fs.writeFileSync(fileName, markdownContent, 'utf8')
   }
@@ -99,10 +104,41 @@ export class Logger implements LoggerInterface {
       const status = (urlLogs[0].link as LoggedLink).status
       const linkCell =
         status === LinkStatus.Malformed ? `\`${this._encodeUrl(url)}\`` : this._markdownLink(this._shortLabel(url, true), url)
-      markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${Logger._linkProblemLabels[status]} | ${this._renderUsages(urlLogs)} |\n`
+      markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${this._problem(urlLogs)} | ${this._renderUsages(urlLogs)} |\n`
     })
 
     return markdownContent
+  }
+
+  /**
+   * Links refused with a 403 or unreachable even in a real browser: visible, since some are really deleted files or dead servers,
+   * but apart from the broken links since a firewall blocking bots or the CI servers gives the same result.
+   */
+  private _renderToCheckLogs(logs: LogEvent[]): string {
+    const logsByUrl = this._groupBy(logs, (log) => (log.link as LoggedLink).url)
+    if (logsByUrl.size === 0) {
+      return ''
+    }
+
+    let markdownContent = `\n#### ${LogLevelDisplay[LogLevel.Info]} Liens refusés ou injoignables, à vérifier manuellement (${logsByUrl.size})\n\n`
+    markdownContent +=
+      'Fichier supprimé ou serveur en panne, ou pare-feu qui bloque les robots ou les serveurs de la CI : le lien peut fonctionner pour un visiteur.\n\n'
+    markdownContent += '| Lien | Problème | Utilisé dans |\n'
+    markdownContent += '| --- | --- | --- |\n'
+    ;[...logsByUrl.keys()].sort().forEach((url) => {
+      const urlLogs = logsByUrl.get(url) as LogEvent[]
+      markdownContent += `| ${this._markdownLink(this._shortLabel(url, true), url)} | ${this._problem(urlLogs)} | ${this._renderUsages(urlLogs)} |\n`
+    })
+
+    return markdownContent
+  }
+
+  // "Lien cassé (HTTP 500)", with the first reason given by the logs of the link
+  private _problem(urlLogs: LogEvent[]): string {
+    const links = urlLogs.map((log) => log.link as LoggedLink)
+    const label = Logger._linkProblemLabels[links[0].status]
+    const reason = links.find((link) => link.reason)?.reason
+    return reason ? `${label} (${this._escapeText(reason)})` : label
   }
 
   /**

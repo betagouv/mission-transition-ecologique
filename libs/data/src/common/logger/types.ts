@@ -32,6 +32,8 @@ export interface LoggedLink {
   status: LinkStatus
   // Baserow field where the link was found (e.g. "étape 1", "Contact Question")
   field: string
+  // why the link is not valid (e.g. "HTTP 500", "délai dépassé")
+  reason?: string
 }
 
 export interface LogEvent {
