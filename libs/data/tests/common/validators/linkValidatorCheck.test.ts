@@ -234,6 +234,13 @@ describe('LinkValidator playwright browser', () => {
     await vi.advanceTimersByTimeAsync(5000)
   })
 
+  it('returns Valid when the browser starts downloading the file', async () => {
+    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    mockBrowser(new Error('page.goto: Download is starting'))
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
   it('returns Unverifiable when the browser fails to navigate after a 403', async () => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
     mockBrowser(new Error('Timeout 20000ms exceeded'))

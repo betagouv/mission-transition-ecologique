@@ -337,7 +337,11 @@ export class LinkValidator {
         return { result: ValidationResult.Uncertain }
       }
       return this._classifyResponse(response.status(), response.headers()['cf-mitigated'])
-    } catch {
+    } catch (error) {
+      // A file served as an attachment (e.g. a PDF) makes goto fail once the download starts: the link works
+      if (error instanceof Error && error.message.includes('Download is starting')) {
+        return { result: ValidationResult.Valid }
+      }
       return { result: ValidationResult.Uncertain }
     } finally {
       await context?.close().catch(() => undefined)
