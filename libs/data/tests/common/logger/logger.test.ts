@@ -178,9 +178,7 @@ describe('Logger.write', () => {
     )
 
     const content = writtenContent(logger)
-    const toCheckTitle = content.indexOf(
-      '#### :warning: Liens refusés ou injoignables même dans un navigateur, à vérifier manuellement (2)'
-    )
+    const toCheckTitle = content.indexOf('#### :warning: Liens refusés ou injoignables, à vérifier manuellement (2)')
     const forbiddenRows = content.split('\n').filter((line) => line.includes('refuse.fr/b'))
 
     expect(content).toContain('| Lien cassé (HTTP 404) |')
@@ -191,6 +189,15 @@ describe('Logger.write', () => {
       '| [refuse.fr/b](https://refuse.fr/b) | Accès refusé (403), même dans un navigateur (HTTP 403 dans le navigateur) |'
     )
     expect(forbiddenRows[0]).toContain(' : étape 2<br>')
-    expect(content).toContain('| Injoignable, même dans un navigateur (délai dépassé ; navigateur : délai dépassé) |')
+    expect(content).toContain('| Injoignable (délai dépassé ; navigateur : délai dépassé) |')
+  })
+
+  it('shows the reason of a link even when its first log has none', () => {
+    const logger = new Logger(LoggerType.Program)
+    const url = 'https://www.example.fr/500'
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 1' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 2', reason: 'HTTP 500' }, 'dispositif-a', 1)
+
+    expect(writtenContent(logger)).toContain('| Lien cassé (HTTP 500) |')
   })
 })

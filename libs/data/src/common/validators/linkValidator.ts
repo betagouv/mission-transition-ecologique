@@ -125,6 +125,8 @@ export class LinkValidator {
     this._cache.set(link, status)
     if (reason) {
       this._reasons.set(link, reason)
+    } else {
+      this._reasons.delete(link)
     }
     return this._withReason({ link, status }, reason)
   }
@@ -207,7 +209,7 @@ export class LinkValidator {
     if (!isBotBlocked && !isNetworkFailure) {
       return { status: LinkStatus.Broken, reason: this._httpReason(getOutcomes) }
     }
-    if (isNetworkFailure && getOutcomes.some((outcome) => outcome.error === NetworkError.DomainNotFound)) {
+    if (isNetworkFailure && getOutcomes.every((outcome) => outcome.error === NetworkError.DomainNotFound)) {
       return { status: LinkStatus.Broken, reason: networkErrorLabel(NetworkError.DomainNotFound) }
     }
 
@@ -229,12 +231,12 @@ export class LinkValidator {
    * only a browser can tell that a real visitor gets the 403 too.
    */
   private static async _browserCheck(link: string, host: string, isBotBlocked: boolean, networkReason: string): Promise<LinkResult> {
-    const fallback = (browserReason?: string): LinkResult =>
+    const fallback = (browserReason: string): LinkResult =>
       isBotBlocked
         ? { status: LinkStatus.Unverifiable }
-        : { status: LinkStatus.Unreachable, reason: browserReason ? `${networkReason} ; navigateur : ${browserReason}` : networkReason }
+        : { status: LinkStatus.Unreachable, reason: `${networkReason} ; navigateur : ${browserReason}` }
     if (!this._isEnablePlaywright()) {
-      return fallback()
+      return fallback('désactivé')
     }
 
     const outcome = await this._playwrightValidation(link)
@@ -247,7 +249,7 @@ export class LinkValidator {
         this._protectedHosts.add(host)
         return { status: LinkStatus.Unverifiable }
       case ValidationResult.BrowserUnavailable:
-        return fallback()
+        return fallback('indisponible')
     }
     if (outcome.error === NetworkError.DomainNotFound) {
       return { status: LinkStatus.Broken, reason: networkErrorLabel(NetworkError.DomainNotFound) }

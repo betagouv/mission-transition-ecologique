@@ -3,7 +3,17 @@ import { NetworkError, networkErrorLabel, toNetworkError } from '../../../src/co
 describe('toNetworkError', () => {
   it.each([
     ['undici dns error', Object.assign(new TypeError('fetch failed'), { cause: { code: 'ENOTFOUND' } }), NetworkError.DomainNotFound],
-    ['axios dns error', Object.assign(new Error('getaddrinfo EAI_AGAIN'), { code: 'EAI_AGAIN' }), NetworkError.DomainNotFound],
+    ['axios dns error', Object.assign(new Error('getaddrinfo ENOTFOUND'), { code: 'ENOTFOUND' }), NetworkError.DomainNotFound],
+    ['temporary dns failure', Object.assign(new Error('getaddrinfo EAI_AGAIN'), { code: 'EAI_AGAIN' }), NetworkError.Timeout],
+    ['chromium connection timeout', new Error('page.goto: net::ERR_CONNECTION_TIMED_OUT at https://a.fr'), NetworkError.Timeout],
+    ['host unreachable', Object.assign(new TypeError('fetch failed'), { cause: { code: 'EHOSTUNREACH' } }), NetworkError.Unreachable],
+    [
+      'expired certificate',
+      Object.assign(new TypeError('fetch failed'), { cause: { code: 'CERT_HAS_EXPIRED' } }),
+      NetworkError.Certificate
+    ],
+    ['chromium certificate', new Error('page.goto: net::ERR_CERT_DATE_INVALID at https://a.fr'), NetworkError.Certificate],
+    ['chromium code with digits', new Error('page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://a.fr'), NetworkError.Other],
     ['fetch abort timeout', Object.assign(new Error('aborted'), { name: 'TimeoutError' }), NetworkError.Timeout],
     ['axios timeout', Object.assign(new Error('timeout of 10000ms exceeded'), { code: 'ECONNABORTED' }), NetworkError.Timeout],
     ['playwright timeout', new Error('page.goto: Timeout 20000ms exceeded.\nCall log: ...'), NetworkError.Timeout],

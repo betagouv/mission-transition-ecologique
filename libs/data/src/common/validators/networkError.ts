@@ -7,18 +7,22 @@ export enum NetworkError {
   Timeout = 'timeout',
   Refused = 'refused',
   Reset = 'reset',
+  Unreachable = 'unreachable',
+  Certificate = 'certificate',
   Other = 'other'
 }
 
 const _codes: Record<string, NetworkError> = {
+  // EAI_AGAIN is a temporary resolver failure: not a dead domain, the browser decides
   ENOTFOUND: NetworkError.DomainNotFound,
-  EAI_AGAIN: NetworkError.DomainNotFound,
   'net::ERR_NAME_NOT_RESOLVED': NetworkError.DomainNotFound,
+  EAI_AGAIN: NetworkError.Timeout,
   ETIMEDOUT: NetworkError.Timeout,
   ECONNABORTED: NetworkError.Timeout,
   UND_ERR_CONNECT_TIMEOUT: NetworkError.Timeout,
   UND_ERR_HEADERS_TIMEOUT: NetworkError.Timeout,
   'net::ERR_TIMED_OUT': NetworkError.Timeout,
+  'net::ERR_CONNECTION_TIMED_OUT': NetworkError.Timeout,
   ECONNREFUSED: NetworkError.Refused,
   'net::ERR_CONNECTION_REFUSED': NetworkError.Refused,
   ECONNRESET: NetworkError.Reset,
@@ -26,7 +30,18 @@ const _codes: Record<string, NetworkError> = {
   UND_ERR_SOCKET: NetworkError.Reset,
   'net::ERR_CONNECTION_RESET': NetworkError.Reset,
   'net::ERR_CONNECTION_CLOSED': NetworkError.Reset,
-  'net::ERR_EMPTY_RESPONSE': NetworkError.Reset
+  'net::ERR_EMPTY_RESPONSE': NetworkError.Reset,
+  EHOSTUNREACH: NetworkError.Unreachable,
+  ENETUNREACH: NetworkError.Unreachable,
+  'net::ERR_ADDRESS_UNREACHABLE': NetworkError.Unreachable,
+  CERT_HAS_EXPIRED: NetworkError.Certificate,
+  DEPTH_ZERO_SELF_SIGNED_CERT: NetworkError.Certificate,
+  SELF_SIGNED_CERT_IN_CHAIN: NetworkError.Certificate,
+  UNABLE_TO_VERIFY_LEAF_SIGNATURE: NetworkError.Certificate,
+  ERR_TLS_CERT_ALTNAME_INVALID: NetworkError.Certificate,
+  'net::ERR_CERT_DATE_INVALID': NetworkError.Certificate,
+  'net::ERR_CERT_AUTHORITY_INVALID': NetworkError.Certificate,
+  'net::ERR_CERT_COMMON_NAME_INVALID': NetworkError.Certificate
 }
 
 const _labels: Record<NetworkError, string> = {
@@ -34,6 +49,8 @@ const _labels: Record<NetworkError, string> = {
   [NetworkError.Timeout]: 'délai dépassé',
   [NetworkError.Refused]: 'connexion refusée',
   [NetworkError.Reset]: 'connexion coupée',
+  [NetworkError.Unreachable]: 'hôte inaccessible',
+  [NetworkError.Certificate]: 'certificat TLS invalide',
   [NetworkError.Other]: 'erreur réseau'
 }
 
@@ -52,7 +69,7 @@ export function toNetworkError(error: unknown): NetworkError {
       return _codes[code]
     }
   }
-  const chromiumCode = error.message.match(/net::ERR_[A-Z_]+/)?.[0]
+  const chromiumCode = error.message.match(/net::ERR_[A-Z0-9_]+/)?.[0]
   return (chromiumCode && _codes[chromiumCode]) || NetworkError.Other
 }
 

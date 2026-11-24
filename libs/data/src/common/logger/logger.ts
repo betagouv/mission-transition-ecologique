@@ -20,7 +20,7 @@ export class Logger implements LoggerInterface {
     [LinkStatus.Malformed]: 'Lien mal formé (chemin local ou protocole non web)',
     [LinkStatus.Unverifiable]: 'Non vérifiable automatiquement (protection anti-robot)',
     [LinkStatus.Forbidden]: 'Accès refusé (403), même dans un navigateur',
-    [LinkStatus.Unreachable]: 'Injoignable, même dans un navigateur'
+    [LinkStatus.Unreachable]: 'Injoignable'
   }
 
   constructor(
@@ -104,7 +104,7 @@ export class Logger implements LoggerInterface {
       const status = (urlLogs[0].link as LoggedLink).status
       const linkCell =
         status === LinkStatus.Malformed ? `\`${this._encodeUrl(url)}\`` : this._markdownLink(this._shortLabel(url, true), url)
-      markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${this._problem(urlLogs[0].link as LoggedLink)} | ${this._renderUsages(urlLogs)} |\n`
+      markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${this._problem(urlLogs)} | ${this._renderUsages(urlLogs)} |\n`
     })
 
     return markdownContent
@@ -120,23 +120,25 @@ export class Logger implements LoggerInterface {
       return ''
     }
 
-    let markdownContent = `\n#### ${LogLevelDisplay[LogLevel.Info]} Liens refusés ou injoignables même dans un navigateur, à vérifier manuellement (${logsByUrl.size})\n\n`
+    let markdownContent = `\n#### ${LogLevelDisplay[LogLevel.Info]} Liens refusés ou injoignables, à vérifier manuellement (${logsByUrl.size})\n\n`
     markdownContent +=
       'Fichier supprimé ou serveur en panne, ou pare-feu qui bloque les robots ou les serveurs de la CI : le lien peut fonctionner pour un visiteur.\n\n'
     markdownContent += '| Lien | Problème | Utilisé dans |\n'
     markdownContent += '| --- | --- | --- |\n'
     ;[...logsByUrl.keys()].sort().forEach((url) => {
       const urlLogs = logsByUrl.get(url) as LogEvent[]
-      markdownContent += `| ${this._markdownLink(this._shortLabel(url, true), url)} | ${this._problem(urlLogs[0].link as LoggedLink)} | ${this._renderUsages(urlLogs)} |\n`
+      markdownContent += `| ${this._markdownLink(this._shortLabel(url, true), url)} | ${this._problem(urlLogs)} | ${this._renderUsages(urlLogs)} |\n`
     })
 
     return markdownContent
   }
 
-  // "Lien cassé (HTTP 500)"
-  private _problem(link: LoggedLink): string {
-    const label = Logger._linkProblemLabels[link.status]
-    return link.reason ? `${label} (${this._escapeText(link.reason)})` : label
+  // "Lien cassé (HTTP 500)", with the first reason given by the logs of the link
+  private _problem(urlLogs: LogEvent[]): string {
+    const links = urlLogs.map((log) => log.link as LoggedLink)
+    const label = Logger._linkProblemLabels[links[0].status]
+    const reason = links.find((link) => link.reason)?.reason
+    return reason ? `${label} (${this._escapeText(reason)})` : label
   }
 
   /**

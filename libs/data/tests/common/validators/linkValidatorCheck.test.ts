@@ -112,7 +112,16 @@ describe('LinkValidator.checkLink', () => {
   it('returns Unreachable on persistent network errors when playwright is disabled', async () => {
     const error = new Error('socket hang up')
     mockResponses(error, error, error)
-    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Unreachable, reason: 'erreur réseau' })
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({
+      status: LinkStatus.Unreachable,
+      reason: 'erreur réseau ; navigateur : désactivé'
+    })
+  })
+
+  it('does not conclude to an unknown domain when only one request fails on DNS', async () => {
+    const timeout = Object.assign(new Error('aborted'), { name: 'TimeoutError' })
+    mockResponses(timeout, dnsError(), timeout)
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unreachable)
   })
 
   it('returns Broken without the browser when the domain does not exist', async () => {
@@ -295,6 +304,16 @@ describe('LinkValidator playwright browser', () => {
     mockBrowser(new Error('Timeout 20000ms exceeded'))
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unverifiable)
     await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('says when the browser could not be launched after network errors', async () => {
+    const error = new Error('socket hang up')
+    mockResponses(error, error, error)
+    vi.mocked(chromium.launch).mockRejectedValue(new Error('no browser'))
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({
+      status: LinkStatus.Unreachable,
+      reason: 'erreur réseau ; navigateur : indisponible'
+    })
   })
 
   it('returns Unverifiable when the browser cannot be launched', async () => {
