@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { chromium } from 'playwright'
-import { LogLevel } from '../../../../src/common/logger/types'
-import { LinkStatus } from '../../../../src/common/validators/linkStatus'
-import { LinkValidator } from '../../../../src/common/validators/linkValidator'
+import { LogLevel } from '../../../src/common/logger/types'
+import { LinkStatus } from '../../../src/common/validators/linkStatus'
+import { LinkValidator } from '../../../src/common/validators/linkValidator'
 
 vi.mock('axios', () => ({
   default: { get: vi.fn() }
@@ -40,16 +40,24 @@ const mockResponses = (head: FakeResponse | Error, get: FakeResponse | Error, ax
   return fetchMock
 }
 
-// Playwright browser whose pages answer with the given status
-const mockBrowser = (status: number) => {
+// Playwright browser whose pages answer with the given response, or fail to navigate
+const mockBrowser = (response: FakeResponse | Error) => {
+  const handlers: Record<string, () => void> = {}
+  const goto = () =>
+    response instanceof Error
+      ? Promise.reject(response)
+      : Promise.resolve({
+          status: () => response.status,
+          headers: () => (response.cfMitigated ? { 'cf-mitigated': response.cfMitigated } : {})
+        })
   const browser = {
-    newContext: vi.fn(() =>
-      Promise.resolve({
-        newPage: () => Promise.resolve({ goto: () => Promise.resolve({ status: () => status, headers: () => ({}) }) }),
-        close: () => Promise.resolve()
-      })
-    ),
-    close: vi.fn(() => Promise.resolve())
+    newContext: vi.fn(() => Promise.resolve({ newPage: () => Promise.resolve({ goto }), close: () => Promise.resolve() })),
+    close: vi.fn(() => Promise.resolve()),
+    on: vi.fn((event: string, handler: () => void) => {
+      handlers[event] = handler
+    }),
+    // simulates a browser crash
+    disconnect: () => handlers['disconnected']?.()
   }
   vi.mocked(chromium.launch).mockResolvedValue(browser as never)
   return browser
@@ -98,25 +106,46 @@ describe('LinkValidator.checkLink', () => {
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
   })
 
-  it('returns Broken on persistent network errors', async () => {
+  it('returns Broken on persistent network errors when playwright is disabled', async () => {
     const error = new Error('socket hang up')
     mockResponses(error, error, error)
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
   })
 
-  it('returns Unverifiable on a Cloudflare challenge and skips the next requests on the same host', async () => {
-    const fetchMock = mockResponses({ status: 403, cfMitigated: 'challenge' }, { status: 403 }, { status: 403 })
+  it('returns Broken on a 401', async () => {
+    mockResponses({ status: 401 }, { status: 401 }, { status: 401 })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+  })
+
+  it('does not let a 403 on HEAD hide a persistent 5xx on GET', async () => {
+    mockResponses({ status: 403 }, { status: 500 }, { status: 500 })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+  })
+
+  it('returns Unverifiable on a Cloudflare challenge on GET and skips the next requests on the same host', async () => {
+    const fetchMock = mockResponses({ status: 403 }, { status: 403, cfMitigated: 'challenge' }, { status: 403 })
     const host = `protected-${++counter}.fr`
+
+    expect(await LinkValidator.checkLink(`https://${host}/a`)).toBe(LinkStatus.Unverifiable)
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+
+    expect(await LinkValidator.checkLink(`https://${host}/b`)).toBe(LinkStatus.Unverifiable)
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
+
+  it('returns Unverifiable on a Cloudflare challenge on HEAD without skipping the rest of the host', async () => {
+    const fetchMock = mockResponses({ status: 403, cfMitigated: 'challenge' }, { status: 200 }, { status: 200 })
+    const host = `head-protected-${++counter}.fr`
 
     expect(await LinkValidator.checkLink(`https://${host}/a`)).toBe(LinkStatus.Unverifiable)
     expect(fetchMock).toHaveBeenCalledTimes(1)
 
-    expect(await LinkValidator.checkLink(`https://${host}/b`)).toBe(LinkStatus.Unverifiable)
-    expect(fetchMock).toHaveBeenCalledTimes(1)
+    await LinkValidator.checkLink(`https://${host}/b`)
+    expect(fetchMock).toHaveBeenCalledTimes(2)
   })
 
-  it('returns Unverifiable on persistent 403 without Cloudflare when playwright is disabled', async () => {
-    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+  it.each([403, 429])('returns Unverifiable on persistent %s without Cloudflare when playwright is disabled', async (status) => {
+    mockResponses({ status }, { status }, { status })
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unverifiable)
   })
 
@@ -142,7 +171,7 @@ describe('LinkValidator playwright browser', () => {
 
   it('reuses a single browser for several links and closes it once idle', async () => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
-    const browser = mockBrowser(200)
+    const browser = mockBrowser({ status: 200 })
 
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
@@ -157,8 +186,58 @@ describe('LinkValidator playwright browser', () => {
 
   it('returns Broken when the browser gets a 404', async () => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
-    mockBrowser(404)
+    mockBrowser({ status: 404 })
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it.each([401, 403, 500])('returns Broken when the browser also gets a %s without challenge', async (status) => {
+    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    mockBrowser({ status })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Unverifiable when the browser is rate limited', async () => {
+    mockResponses({ status: 429 }, { status: 429 }, { status: 429 })
+    mockBrowser({ status: 429 })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unverifiable)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Unverifiable when the browser gets a challenge and skips the next requests on the same host', async () => {
+    const fetchMock = mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    const browser = mockBrowser({ status: 403, cfMitigated: 'challenge' })
+    const host = `browser-protected-${++counter}.fr`
+
+    expect(await LinkValidator.checkLink(`https://${host}/a`)).toBe(LinkStatus.Unverifiable)
+    expect(await LinkValidator.checkLink(`https://${host}/b`)).toBe(LinkStatus.Unverifiable)
+
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+    expect(browser.newContext).toHaveBeenCalledTimes(1)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('uses the browser after network errors on every request', async () => {
+    const error = new Error('socket hang up')
+    mockResponses(error, error, error)
+    mockBrowser({ status: 200 })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Broken when the browser fails to navigate after network errors', async () => {
+    const error = new Error('socket hang up')
+    mockResponses(error, error, error)
+    mockBrowser(new Error('net::ERR_NAME_NOT_RESOLVED'))
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Unverifiable when the browser fails to navigate after a 403', async () => {
+    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    mockBrowser(new Error('Timeout 20000ms exceeded'))
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unverifiable)
     await vi.advanceTimersByTimeAsync(5000)
   })
 
@@ -166,6 +245,18 @@ describe('LinkValidator playwright browser', () => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
     vi.mocked(chromium.launch).mockRejectedValue(new Error('no browser'))
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Unverifiable)
+  })
+
+  it('launches a new browser after a crash', async () => {
+    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    const browser = mockBrowser({ status: 200 })
+
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
+    browser.disconnect()
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Valid)
+
+    expect(chromium.launch).toHaveBeenCalledTimes(2)
+    await vi.advanceTimersByTimeAsync(5000)
   })
 })
 

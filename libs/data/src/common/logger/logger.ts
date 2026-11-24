@@ -58,7 +58,8 @@ export class Logger implements LoggerInterface {
 
     // Most important sections first: the PR body may be truncated at the end
     const markdownContent =
-      this._renderGeneralLogs(generalLogs) + this._renderLinkLogs(linkLogs) + this._renderUnverifiableLogs(unverifiableLogs)
+      this._renderGeneralLogs(generalLogs) + this._renderLinkLogs(linkLogs) + this._renderUnverifiableLogs(unverifiableLogs) ||
+      'Aucun point problématique détecté.\n'
 
     fs.writeFileSync(fileName, markdownContent, 'utf8')
   }
@@ -178,9 +179,13 @@ export class Logger implements LoggerInterface {
     return `[${this._escapeText(label)}](${this._encodeUrl(url)})`
   }
 
-  // pipes would split the table cell, an encoded pipe keeps the url valid
+  /**
+   * Url inside a link target or a code span: characters that would end the target (space, parenthesis),
+   * split the table cell (pipe), close the code span (backtick) or open an html tag are percent-encoded,
+   * which keeps the url valid.
+   */
   private _encodeUrl(url: string): string {
-    return url.replace(/\|/g, '%7C').replace(/\r?\n/g, '')
+    return url.replace(/\r?\n/g, '').replace(/[ ()|`<>]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase().padStart(2, '0')}`)
   }
 
   private _hostname(url: string): string {
@@ -193,10 +198,11 @@ export class Logger implements LoggerInterface {
 
   /**
    * Text inside a table cell or a link text: pipes would split the cell, brackets would break the link,
-   * backslashes are escaped too so they cannot cancel the other escapes.
+   * `<` could open an html tag, `*`, `_` and backticks would start an emphasis or a code span.
+   * Backslashes are escaped too so they cannot cancel the other escapes.
    */
   private _escapeText(value: string): string {
-    return value.replace(/[\\|[\]]/g, '\\$&').replace(/\r?\n/g, ' ')
+    return value.replace(/[\\|[\]<>*_`]/g, '\\$&').replace(/\r?\n/g, ' ')
   }
 
   private _sortLogs(): LogEvent[] {

@@ -32,7 +32,7 @@ describe('Logger.write', () => {
   it('groups a broken link used in several programs and fields on a single row', () => {
     const logger = new Logger(LoggerType.Program)
     const url = 'https://www.example.fr/contact'
-    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: '"Contact Question"' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'Contact Question' }, 'dispositif-a', 1)
     logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 2' }, 'dispositif-a', 1)
     logger.logLink(LogLevel.Minor, { url, status: LinkStatus.Broken, field: 'URL externe' }, 'dispositif-b', 2)
 
@@ -42,7 +42,7 @@ describe('Logger.write', () => {
     expect(content).toContain('#### Liens cassés ou mal formés (1)')
     expect(rows).toHaveLength(1)
     expect(rows[0]).toContain('| :fire: :fire: |')
-    expect(rows[0]).toContain('[dispositif-a](https://baserow.io/database/114839/table/314437/539069/row/1) : "Contact Question", étape 2')
+    expect(rows[0]).toContain('[dispositif-a](https://baserow.io/database/114839/table/314437/539069/row/1) : Contact Question, étape 2')
     expect(rows[0]).toContain('<br>[dispositif-b](https://baserow.io/database/114839/table/314437/539069/row/2) : URL externe')
   })
 
@@ -125,5 +125,36 @@ describe('Logger.write', () => {
 
     expect(content).toContain('[Question a \\\\\\| b ?](')
     expect(content).toContain('[www.example.fr/a\\\\\\]](https://www.example.fr/a%5C%5D)')
+  })
+
+  it('writes an explicit message when there is nothing to report', () => {
+    expect(writtenContent(new Logger(LoggerType.Program))).toBe('Aucun point problématique détecté.\n')
+  })
+
+  it('encodes spaces and parentheses in link targets', () => {
+    const logger = new Logger(LoggerType.Program)
+    const url = 'https://www.example.fr/fiche (2026) v2.pdf'
+    logger.logLink(LogLevel.Major, { url, status: LinkStatus.Broken, field: 'étape 1' }, 'dispositif-a', 1)
+
+    expect(writtenContent(logger)).toContain('](https://www.example.fr/fiche%20%282026%29%20v2.pdf)')
+  })
+
+  it('encodes backticks in malformed links shown as code', () => {
+    const logger = new Logger(LoggerType.Program)
+    logger.logLink(LogLevel.Critic, { url: 'https://file:///a`b.pdf', status: LinkStatus.Malformed, field: 'étape 1' }, 'dispositif-a', 1)
+
+    expect(writtenContent(logger)).toContain('`https://file:///a%60b.pdf`')
+  })
+
+  it('escapes html and emphasis characters in texts', () => {
+    const logger = new Logger(LoggerType.Faq)
+    logger.logLink(
+      LogLevel.Major,
+      { url: 'https://www.example.fr/404', status: LinkStatus.Broken, field: 'Réponse' },
+      'Une <b>question</b> *_`',
+      3
+    )
+
+    expect(writtenContent(logger)).toContain('Une \\<b\\>question\\</b\\> \\*\\_\\`')
   })
 })

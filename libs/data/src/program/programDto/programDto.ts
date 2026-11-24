@@ -124,7 +124,7 @@ export class ProgramDto {
     }
     if (isUrl) {
       this.programData['contact question'] = LinkValidator.forceHttps(rawData)
-      await validateProgramLink(rawData, LogLevel.Major, '"Contact Question"', this)
+      await validateProgramLink(rawData, LogLevel.Major, 'Contact Question', this)
       return
     }
     if (isEmail) {

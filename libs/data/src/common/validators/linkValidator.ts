@@ -10,11 +10,13 @@ import { LinkValidatorCache } from './linkValidatorCache'
 // Invalid   : 404/410, link is definitively broken
 // Protected : Cloudflare challenge, a bot cannot tell whether the link works
 // Uncertain : anything else (403, 429, 5xx, timeout, network error), escalate to next validation method
+// BrowserUnavailable : playwright could not be launched, says nothing about the link
 enum ValidationResult {
   Valid = 'valid',
   Invalid = 'invalid',
   Protected = 'protected',
-  Uncertain = 'uncertain'
+  Uncertain = 'uncertain',
+  BrowserUnavailable = 'browserUnavailable'
 }
 
 interface ValidationOutcome {
@@ -136,23 +138,36 @@ export class LinkValidator {
     return brokenLevel
   }
 
+  /**
+   * Checks a link with HEAD, GET (fetch) then GET (axios), and with a real browser when the GET requests are not conclusive:
+   * - 403/429 on a GET request: likely bot-blocking, since all pages are expected to be public
+   * - network error or timeout on every GET request: some firewalls drop bot connections instead of answering 403
+   * Any other HTTP error on the GET requests (5xx, 401, other 4xx) means a visitor would most likely fail too.
+   * HEAD is only trusted for a success or a challenge: some servers answer it badly (403, 405, 5xx) while GET works.
+   */
   private static async _checkLink(link: string): Promise<LinkStatus> {
     if (this.isMalformed(link)) {
       return LinkStatus.Malformed
     }
 
+    // A Cloudflare challenge usually covers the whole domain: the other links of the host are not requested again during the run
     const host = new URL(link).hostname
     if (this._protectedHosts.has(host)) {
       return LinkStatus.Unverifiable
     }
 
-    const validations = [() => this._headValidation(link), () => this._fetchValidation(link), () => this._axiosValidation(link)]
+    const headOutcome = await this._headValidation(link)
+    if (headOutcome.result === ValidationResult.Valid) {
+      return LinkStatus.Valid
+    }
+    if (headOutcome.result === ValidationResult.Protected) {
+      return LinkStatus.Unverifiable
+    }
 
-    let isBotBlocked = false
-    for (const validation of validations) {
+    const getOutcomes: ValidationOutcome[] = []
+    for (const validation of [() => this._fetchValidation(link), () => this._axiosValidation(link)]) {
+      await this._pause()
       const outcome = await validation()
-      await new Promise((resolve) => setTimeout(resolve, 50))
-
       switch (outcome.result) {
         case ValidationResult.Valid:
           return LinkStatus.Valid
@@ -162,31 +177,53 @@ export class LinkValidator {
           this._protectedHosts.add(host)
           return LinkStatus.Unverifiable
       }
-      if (this._isBotBlockingStatus(outcome.status)) {
-        isBotBlocked = true
-      }
+      getOutcomes.push(outcome)
     }
 
-    // 5xx, timeouts and network/TLS errors on every method: a visitor would most likely fail too.
-    if (!isBotBlocked) {
+    const isBotBlocked = getOutcomes.some((outcome) => this._isBotBlockingStatus(outcome.status))
+    const isNetworkFailure = getOutcomes.every((outcome) => outcome.status === undefined)
+    if (!isBotBlocked && !isNetworkFailure) {
       return LinkStatus.Broken
     }
 
-    // 403/429: likely bot-blocking, since all pages are expected to be public use playwright to confirm.
-    if (this._isEnablePlaywright()) {
-      const outcome = await this._playwrightValidation(link)
-      if (outcome.result === ValidationResult.Valid) {
-        return LinkStatus.Valid
-      }
-      if (outcome.result === ValidationResult.Invalid) {
-        return LinkStatus.Broken
-      }
-      if (outcome.result === ValidationResult.Protected) {
-        this._protectedHosts.add(host)
-      }
+    return this._browserCheck(link, host, isBotBlocked)
+  }
+
+  /**
+   * Last resort with a real browser:
+   * - success → Valid
+   * - challenge → Unverifiable, for every link of the host
+   * - 429 → Unverifiable (rate limited)
+   * - any other HTTP error, 403 included → Broken: a real browser is not expected to be blocked without a challenge
+   * - navigation error → Broken after network errors only, Unverifiable after a 403/429
+   * - browser disabled or unavailable → Unverifiable after a 403/429, Broken after network errors only
+   */
+  private static async _browserCheck(link: string, host: string, isBotBlocked: boolean): Promise<LinkStatus> {
+    const fallback = isBotBlocked ? LinkStatus.Unverifiable : LinkStatus.Broken
+    if (!this._isEnablePlaywright()) {
+      return fallback
     }
 
-    return LinkStatus.Unverifiable
+    const outcome = await this._playwrightValidation(link)
+    switch (outcome.result) {
+      case ValidationResult.Valid:
+        return LinkStatus.Valid
+      case ValidationResult.Invalid:
+        return LinkStatus.Broken
+      case ValidationResult.Protected:
+        this._protectedHosts.add(host)
+        return LinkStatus.Unverifiable
+      case ValidationResult.BrowserUnavailable:
+        return fallback
+    }
+    if (outcome.status === undefined) {
+      return fallback
+    }
+    return outcome.status === 429 ? LinkStatus.Unverifiable : LinkStatus.Broken
+  }
+
+  private static _pause(): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, 50))
   }
 
   private static _isBotBlockingStatus(status: number | undefined): boolean {
@@ -281,15 +318,19 @@ export class LinkValidator {
     this._activePlaywrightChecks++
     let context: BrowserContext | undefined
     try {
-      const browser = await this._getBrowser()
-      // A fresh context per link isolates cookies while reusing the same browser process
-      context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        extraHTTPHeaders: {
-          Referer: 'https://mission-transition-ecologique.beta.gouv.fr/',
-          'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7'
-        }
-      })
+      try {
+        const browser = await this._getBrowser()
+        // A fresh context per link isolates cookies while reusing the same browser process
+        context = await browser.newContext({
+          userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          extraHTTPHeaders: {
+            Referer: 'https://mission-transition-ecologique.beta.gouv.fr/',
+            'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7'
+          }
+        })
+      } catch {
+        return { result: ValidationResult.BrowserUnavailable }
+      }
       const page = await context.newPage()
       const response = await page.goto(link, { timeout: 20000 })
       if (!response) {
@@ -308,11 +349,25 @@ export class LinkValidator {
   private static _getBrowser(): Promise<Browser> {
     this._clearBrowserIdleTimer()
     if (!this._browser) {
-      this._browser = chromium.launch().catch((error: unknown) => {
-        // Do not keep a failed launch: the next check will retry
-        this._browser = undefined
-        throw error
-      })
+      const launch: Promise<Browser> = chromium.launch().then(
+        (browser) => {
+          // A crashed browser is replaced on the next check
+          browser.on('disconnected', () => {
+            if (this._browser === launch) {
+              this._browser = undefined
+            }
+          })
+          return browser
+        },
+        (error: unknown) => {
+          // Do not keep a failed launch: the next check will retry
+          if (this._browser === launch) {
+            this._browser = undefined
+          }
+          throw error
+        }
+      )
+      this._browser = launch
     }
     return this._browser
   }

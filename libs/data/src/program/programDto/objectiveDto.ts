@@ -26,7 +26,7 @@ async function parseStep(step: string, stepId: number, generator: ProgramDto): P
     description,
     generator.logger,
     LogLevel.Minor,
-    `"Objectif ${stepId}"`,
+    `Objectif ${stepId}`,
     generator.rawProgram['Id fiche dispositif'],
     generator.rawProgram.id
   )

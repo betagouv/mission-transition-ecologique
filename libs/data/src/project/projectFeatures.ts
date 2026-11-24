@@ -133,7 +133,7 @@ export class ProjectFeatures {
       LinkValidator.logLinkStatus(check, {
         logger: this._logger,
         brokenLevel: LogLevel.Major,
-        field: '"pour aller plus loin"',
+        field: 'pour aller plus loin',
         id: project['title'],
         rowId: project.id
       })
