@@ -26,29 +26,28 @@ async function parseStep(step: string, stepId: number, generator: ProgramDto): P
     description,
     generator.logger,
     LogLevel.Minor,
-    `"Objectif ${stepId}"`,
+    `Objectif ${stepId}`,
     generator.rawProgram['Id fiche dispositif'],
     generator.rawProgram.id
   )
 
-  const liens = lines
-    .slice(1)
-    .map((line) => {
-      if (line.toLocaleLowerCase().includes('#formulaire#')) {
-        return { formulaire: true }
+  const liens: NonNullable<YamlObjective['liens']> = []
+  for (const line of lines.slice(1)) {
+    if (line.toLocaleLowerCase().includes('#formulaire#')) {
+      liens.push({ formulaire: true })
+      continue
+    }
+    const match = line.match(/\[(.*?)\]\((.*?)\)/)
+    if (match) {
+      const isUrl = z.string().url().safeParse(match[2]).success
+      const isEmail = match[2].startsWith('mailto:')
+      if (isUrl && !isEmail) {
+        // awaited so that the log is written before the report
+        await validateObjectiveLink(match[2], stepId, generator)
       }
-      const match = line.match(/\[(.*?)\]\((.*?)\)/)
-      if (match) {
-        const isUrl = z.string().url().safeParse(match[2]).success
-        const isEmail = match[2].startsWith('mailto:')
-        if (isUrl && !isEmail) {
-          validateObjectiveLink(match[2], stepId, generator)
-        }
-        return { lien: match[2], texte: match[1] }
-      }
-      return null
-    })
-    .filter((link) => link !== null)
+      liens.push({ lien: match[2], texte: match[1] })
+    }
+  }
 
   return { description, liens: liens.length > 0 ? liens : undefined }
 }

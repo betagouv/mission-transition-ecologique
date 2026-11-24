@@ -2,12 +2,23 @@ name: Update Data
 
 on:
   workflow_dispatch:
+    inputs:
+      refresh_link_cache:
+        description: 'Revérifier tous les liens, sans utiliser le cache des liens valides'
+        type: boolean
+        default: false
   schedule:
     - cron: '12 3 * * *' # daily 3:12AM run
 
 permissions:
   contents: write
   pull-requests: write
+
+# Link validation cache shared by the jobs that check links (see LinkValidatorCache).
+# Outside the workspace so it is NOT committed, saved and restored with actions/cache in each job.
+env:
+  LINK_VALIDATOR_CACHE_FILE: /tmp/link-validator-cache.json
+  LINK_VALIDATOR_CACHE_TTL_DAYS: ${{ inputs.refresh_link_cache && '0' || '3' }}
 
 jobs:
   update-projects:
@@ -28,10 +39,26 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see the workflow env)
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-projects-${{ github.run_id }}
+          restore-keys: link-validator-projects-
+
       - name: Generate projects
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:projects
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-projects-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
@@ -39,6 +66,7 @@ jobs:
         run: |
           log_file=libs/data/projectGeneration.log
           body_file="${{ runner.temp }}/pr-body.md"
+          truncated_file="${{ runner.temp }}/truncated-log.md"
           {
             echo "Cette pull request a été créée automatiquement pour mettre à jour les projets."
             echo ""
@@ -53,8 +81,15 @@ jobs:
             echo ":fire: mineur"
             echo ":warning:  info"
             echo ""
-            head -c 55000 "$log_file"
-            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+            if [ "$(wc -c < "$log_file")" -le 55000 ]; then
+              cat "$log_file"
+            else
+              # Cut on a line boundary, then close the collapsed section if the cut happened inside it
+              head -c 55000 "$log_file" | head -n -1 > "$truncated_file"
+              cat "$truncated_file"
+              if [ "$(grep -c '<details>' "$truncated_file")" -gt "$(grep -c '</details>' "$truncated_file")" ]; then
+                printf '\n</details>\n'
+              fi
               printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `projectGeneration-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
             fi
           } > "$body_file"
@@ -95,10 +130,26 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see the workflow env)
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-programs-${{ github.run_id }}
+          restore-keys: link-validator-programs-
+
       - name: Generate programs
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:programs
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-programs-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
@@ -106,6 +157,7 @@ jobs:
         run: |
           log_file=libs/data/programYaml.log
           body_file="${{ runner.temp }}/pr-body.md"
+          truncated_file="${{ runner.temp }}/truncated-log.md"
           {
             echo "Cette pull request a été créée automatiquement pour mettre à jour les dispositifs."
             echo ""
@@ -120,8 +172,15 @@ jobs:
             echo ":fire: mineur"
             echo ":warning:  info"
             echo ""
-            head -c 55000 "$log_file"
-            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+            if [ "$(wc -c < "$log_file")" -le 55000 ]; then
+              cat "$log_file"
+            else
+              # Cut on a line boundary, then close the collapsed section if the cut happened inside it
+              head -c 55000 "$log_file" | head -n -1 > "$truncated_file"
+              cat "$truncated_file"
+              if [ "$(grep -c '<details>' "$truncated_file")" -gt "$(grep -c '</details>' "$truncated_file")" ]; then
+                printf '\n</details>\n'
+              fi
               printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `programYaml-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
             fi
           } > "$body_file"
@@ -197,10 +256,26 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see the workflow env)
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-faq-${{ github.run_id }}
+          restore-keys: link-validator-faq-
+
       - name: Generate FAQ
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:faq
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ env.LINK_VALIDATOR_CACHE_FILE }}
+          key: link-validator-faq-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
@@ -208,6 +283,7 @@ jobs:
         run: |
           log_file=libs/data/generateFaqJson.log
           body_file="${{ runner.temp }}/pr-body.md"
+          truncated_file="${{ runner.temp }}/truncated-log.md"
           {
             echo "Cette pull request a été créée automatiquement pour mettre à jour les FAQ."
             echo ""
@@ -220,8 +296,15 @@ jobs:
             echo ":fire: mineur"
             echo ":warning:  info"
             echo ""
-            head -c 55000 "$log_file"
-            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+            if [ "$(wc -c < "$log_file")" -le 55000 ]; then
+              cat "$log_file"
+            else
+              # Cut on a line boundary, then close the collapsed section if the cut happened inside it
+              head -c 55000 "$log_file" | head -n -1 > "$truncated_file"
+              cat "$truncated_file"
+              if [ "$(grep -c '<details>' "$truncated_file")" -gt "$(grep -c '</details>' "$truncated_file")" ]; then
+                printf '\n</details>\n'
+              fi
               printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `generateFaqJson-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
             fi
           } > "$body_file"

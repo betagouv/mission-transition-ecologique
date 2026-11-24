@@ -128,15 +128,15 @@ export class ProjectFeatures {
   }
 
   private async _validateLinks(project: DataProject) {
-    const invalidLinks: string[] = await LinkValidator.findInvalidLinks(project.moreDescription)
-    for (const link of invalidLinks) {
-      this._logger.log(
-        LogLevel.Major,
-        `Erreur de validation de lien dans le champ "pour aller plus loin"`,
-        project['title'],
-        project.id,
-        `[Lien cassé](${link})`
-      )
+    const invalidLinks = await LinkValidator.findInvalidLinks(project.moreDescription)
+    for (const check of invalidLinks) {
+      LinkValidator.logLinkStatus(check, {
+        logger: this._logger,
+        brokenLevel: LogLevel.Major,
+        field: 'pour aller plus loin',
+        id: project['title'],
+        rowId: project.id
+      })
     }
   }
 

@@ -1,4 +1,4 @@
-import { LinkValidator } from '../../../../src/common/validators/linkValidator'
+import { LinkValidator } from '../../../src/common/validators/linkValidator'
 
 describe('LinkValidator', () => {
   const foundLinks = LinkValidator.foundLinks
